@@ -33,8 +33,6 @@ pay_by_square.generate(
     beneficiary_address_2: str = '',
 ) -> str:
     Generate pay-by-square code that can by used to create QR code for banking apps
-
-    When date is not provided current date will be used.
 ```
 
 ### Example

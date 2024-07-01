@@ -24,12 +24,7 @@ def generate(
 ) -> str:
     '''Generate pay-by-square code that can by used to create QR code for
     banking apps
-
-    When date is not provided current date will be used.
     '''
-
-    if date is None:
-        date = datetime.now()
 
     # 1) create the basic data structure
     data = '\t'.join(
@@ -39,7 +34,7 @@ def generate(
             '1',  # simple payment
             f'{amount:.2f}',
             currency,
-            date.strftime('%Y%m%d'),
+            date.strftime('%Y%m%d') if date is not None else '',
             variable_symbol,
             constant_symbol,
             specific_symbol,
